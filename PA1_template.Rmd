@@ -5,12 +5,12 @@ date: "Sunday, May 17, 2015"
 output: html_document
 ---
 
-#Assignment 1 for Reproducible research course
+*Assignment 1 for Reproducible research course*
 
 First step is to download the data and create the data frame for the analysis
 
 ```{r getting the data}
-act_data<-read.csv("C://Users//????????????????????????//Downloads//activity.csv",header=TRUE,sep=",")
+act_data<-read.csv("C://Users//пользователь//Downloads//activity.csv",header=TRUE,sep=",")
 act_data$date<-as.POSIXct(act_data$date, format="%Y-%m-%d")
 ```
 
@@ -97,7 +97,7 @@ First we need to add a column specifing whether day was week day of weekend
 list_of_days <- as.Date(stepsbydate2[,1])
 names_of_days <- weekdays(list_of_days)
 act_data2$wday <- weekdays(as.Date(act_data2$date))
-d <- ifelse(act_data2$wday %in% c('??????????????','??????????????????????'), 
+d <- ifelse(act_data2$wday %in% c('суббота','воскресенье'), 
             "weekend", "weekday")
 act_data2$wknd_or_not <- d
 ```
